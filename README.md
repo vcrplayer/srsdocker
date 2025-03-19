@@ -8,5 +8,6 @@ docker build -t srsserver:latest .
 ```
 
 To Run:
-
+```
 docker compose up or docker compose up -d
+```
