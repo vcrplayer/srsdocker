@@ -1,5 +1,7 @@
 # SRS Docker Container
-Docker Image and scripts for a linux-based docker container for SRS
+Docker Image and scripts for a linux-based docker container for SRS (Simple Radio Standalone).
+
+Original project: https://github.com/ciribob/DCS-SimpleRadioStandalone
 
 To Build:
 
@@ -11,6 +13,9 @@ To Run:
 ```
 docker compose up or docker compose up -d
 ```
+
+Initial Startup takes a very long time, as it has to initialize wine prerequisites such as dotnet. After initial startup, semaphores are set and the container should restart much faster.
+
 you can modify the server.cfg directly after initially running the container (and mounting /data), but if you set environment variables, they will take precedence and overwrite the server.cfg
 
 ## Possible Environment Variables:
