@@ -1,7 +1,9 @@
 # SRS Docker Container
-Docker Image and scripts for a linux-based docker container for SRS (Simple Radio Standalone).
+Docker Image and scripts for a linux-based docker container for SRS (Simple Radio Standalone) that can be fully unmanaged.
 
-Original project: https://github.com/ciribob/DCS-SimpleRadioStandalone
+Original SRS project: https://github.com/ciribob/DCS-SimpleRadioStandalone
+
+Also inspired from https://github.com/deephack1982/srs-docker
 
 To Build:
 
