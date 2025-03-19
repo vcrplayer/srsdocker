@@ -5,6 +5,13 @@ Original SRS project: https://github.com/ciribob/DCS-SimpleRadioStandalone
 
 Also inspired by https://github.com/deephack1982/srs-docker
 
+
+## To use Docker Hub Image:
+https://hub.docker.com/r/vcrplayer01/srs
+```
+docker pull vcrplayer01/srs:latest
+```
+
 To Build:
 
 ```
