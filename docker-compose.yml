@@ -5,6 +5,7 @@ services:
     image: srsserver:latest
     volumes:
       - ./data:/data
+      - ./wine:/wine
     ports:
 # forward vnc and srs ports
       - "127.0.0.1:5900:5900"

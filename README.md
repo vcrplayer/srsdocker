@@ -3,7 +3,7 @@ Docker Image and scripts for a linux-based docker container for SRS (Simple Radi
 
 Original SRS project: https://github.com/ciribob/DCS-SimpleRadioStandalone
 
-Also inspired from https://github.com/deephack1982/srs-docker
+Also inspired by https://github.com/deephack1982/srs-docker
 
 To Build:
 
