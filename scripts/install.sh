@@ -1,4 +1,7 @@
 #!/bin/bash
+# Record start time
+start_time=$(date +%s)
+
 mkdir -p /data
 mkdir -p /wine
 
@@ -8,7 +11,7 @@ if [ -f /wine/installed ]; then
 else
     echo "Installing Wine prereqs"
     #install wine prerequisites
-    winetricks -q dotnet48 win10 corefonts
+    winetricks -q dotnet48 win10
     wine reg ADD 'HKCU\Software\Wine\DllOverrides' '/f' '/v' 'd3d9' '/t' 'REG_SZ' '/d' 'native'
     #add handling to setup configuration file
     touch /wine/installed
@@ -31,9 +34,15 @@ else
     curl -sL $url -o /data/srs.zip --progress-bar
     unzip /data/srs.zip -d /data/
     rm /data/srs.zip
+    cp /server.cfg /data/server.cfg
     echo $current_version > /data/installed
     echo "SRS $current_version installed successfully"
 fi
 
 echo "Installation complete"
+
+# Calculate and display execution time
+end_time=$(date +%s)
+execution_time=$((end_time - start_time))
+printf "Installation took: %s seconds\n\n\n\n\n" "$execution_time"
 

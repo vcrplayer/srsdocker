@@ -15,10 +15,14 @@ To Run:
 ```
 docker compose up or docker compose up -d
 ```
+in order to view the log state of the initial install, you can run
+```
+docker compose logs -f
+```
 
-Initial Startup takes a very long time, as it has to initialize wine prerequisites such as dotnet. After initial startup, semaphores are set and the container should restart much faster.
+Initial Startup takes a very long time (up to 10 minutes on some devices), as it has to initialize wine prerequisites such as dotnet. After initial startup, semaphores are set and the container should restart much faster.
 
-you can modify the server.cfg directly after initially running the container (and mounting /data), but if you set environment variables, they will take precedence and overwrite the server.cfg
+you can modify the server.cfg directly after initially running the container (and mounting /data), but if you set environment variables, they will take precedence and overwrite the server.cfg before application startup.
 
 ## Possible Environment Variables:
 - VNC_PASSWORD: VNC password
@@ -51,8 +55,9 @@ you can modify the server.cfg directly after initially running the container (an
 - SRS_TRANSMISSION_LOG_RETENTION: Set transmission log retention period
 
 ## Ports
-- 5900: VNC
-- 5002: SRS
+- 5900/tcp: VNC (not required for headless operation, but can be used to debug)
+- 5002/tcp: SRS
+- 5002/udp: SRS
 
 ## Volumes
 - /data: SRS data directory
