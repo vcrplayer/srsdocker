@@ -8,11 +8,13 @@ services:
     ports:
 # forward vnc and srs ports
       - "127.0.0.1:5900:5900"
-      - "5002:5002"
+      - "5002:5002/tcp"
+      - "5002:5002/udp"
     environment:
 #example env vars
       - VNC_PASSWORD=password
       - SRS_EXTERNAL_AWACS_MODE_BLUE_PASSWORD=blue
       - SRS_EXTERNAL_AWACS_MODE_RED_PASSWORD=red
       - SRS_EXTERNAL_AWACS_MODE=true
+      - SRS_UPNP_ENABLED=false
     restart: always
